@@ -12,7 +12,7 @@ The API server is the central touch point that is accessed by all users, automat
 
 A simple, distributed key value storage which is used to store the Kubernetes cluster data.  It is only accessible from the API server for security reasons.  Etcd is a crucial storage component for Kubernetes as it stores the entire state of the cluster: its configuration, specifications, and the statuses of the running workloads.
 
-**Kubernetes Controller-manger**
+**Kubernetes Controller-manager**
 
 The Kubernetes controller manager is a daemon that embeds the core control loops shipped with Kubernetes. In applications of robotics and automation, a control loop is a non-terminating loop that regulates the state of the system. In Kubernetes, a controller is a control loop that watches the shared state of the cluster through the API-server and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and service-accounts controller.
 
@@ -23,3 +23,12 @@ The scheduler watches for newly created Pods that have no Node assigned. For eve
 **Worker Node – kubelet**
 
 The main service on a worker node, regularly taking in new or modified specifications and ensuring the pods and their containers are healthy and running in the desired state.  Within a Kubernetes cluster, the kubelet functions as a local agent that watches for pod specs via the Kubernetes API server.
+
+**Worker Node – kube-proxy**
+
+A proxy service that runs on each worker node to deal with individual host subnetting and expose services to networks outside of Kubernetes.  Kube-proxy maintains network rules on nodes.  These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.
+
+C**ontainer Runtime**
+
+The container runtime is the software that is responsible for running containers.
+
